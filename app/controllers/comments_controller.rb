@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
+
   # GET /comments
   # GET /comments.json
   def index
@@ -24,7 +26,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   # GET /comments/new.json
   def new
-    @comment = Comment.new
+    @comment = current_user.comments.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +42,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
+    @comment = current_user.comments.build(params[:comment])
 
     respond_to do |format|
       if @comment.save

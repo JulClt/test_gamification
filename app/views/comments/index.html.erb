@@ -1,21 +1,32 @@
 <h1>Listing comments</h1>
 
-<table>
+<table class="table table-bordered">
   <tr>
     <th>Title</th>
     <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>User</th>
+    <th>Actions</th>
+    <th>Badges</th>
   </tr>
 
 <% @comments.each do |comment| %>
   <tr>
     <td><%= comment.title %></td>
     <td><%= comment.content %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= comment.user.email %></td>
+    <td>
+      <%= link_to 'Show', comment %> 
+      <% if current_user == comment.user %>
+      -
+      <%= link_to 'Edit', edit_comment_path(comment) %> -
+      <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </td>
+    <td>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-star"></span>
+    </td>
   </tr>
 <% end %>
 </table>
