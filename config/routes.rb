@@ -5,6 +5,7 @@ TestGamification::Application.routes.draw do
   devise_for :users
 
   root to: "comments#index"
+  get '/my_badges/:id', to: 'comments#my_badges', as: 'my_badges'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

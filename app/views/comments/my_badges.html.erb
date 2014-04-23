@@ -1,0 +1,17 @@
+<h1>My badges</h1>
+<table class="table table-bordered">
+	<tr>
+		<th>Titre</th>
+		<th>Description</th>
+		<th>Badge</th>
+	</tr>
+	<% current_user.badges.each do |badge| %>
+	<tr>
+		<td><%= badge.name %></td>
+		<td><%= badge.description %></td>
+		<td>
+			<span class="glyphicon glyphicon-<%= badge.custom_fields[:icon] %>"></span>
+		</td>
+	</tr>
+	<% end %>
+</table>

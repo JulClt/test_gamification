@@ -1,15 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @comment.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @comment.content %>
-</p>
-
+<div class="panel panel-default">
+<div class="panel-heading">
+	<strong> <%= @comment.title %></strong>
+</div>
+<div class="panel-body">
+	 <%= @comment.content %>
+</div>
+</div>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
