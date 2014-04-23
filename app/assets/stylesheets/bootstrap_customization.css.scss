@@ -21,3 +21,23 @@ body{padding-top: 40px;}
 .progress-nav li>span{display: block; float: left; width: 25%; margin-right:5px; margin-top: 6px; font-size: 10px;}
 .progress-nav li>a:hover{background: none; text-decoration: underline; color: #7b8a8b;}
 .progress-nav .label{margin-left: 5px;}
+#assistant-simplified h1{margin-bottom: 30px;}
+#assistant-simplified .glyphicon-ok {color: #27ae60;}
+#assistant-simplified .value-preview {color: #aaa; padding-left: 20px;}
+#assistant-simplified .todo .panel-title {color: #aaa;}
+#assistant-simplified .agenda {
+	border: 1px solid #eee;
+	border-radius: 8px;
+	padding: 12px 12px 0 12px;
+	margin-bottom: 15px;
+	background: #fafafa;
+	position: relative;
+}
+#assistant-simplified .delete-calendar {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #c0392b;
+	font-size: 18px;
+}
+#assistant-simplified .step-number {font-weight: bold; padding-right: 7px;}
