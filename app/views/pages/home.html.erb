@@ -1,14 +1,14 @@
 <div id="assistant-simplified">
 	<h1>Suivez ces étapes et devenez l'as de la prise de RDV !</h1>
-<div ng-include src="'test.html'"></div>
 	<div ng-controller="AssistantCtrl">
 	      
         <accordion>
        		<accordion-group ng-repeat="group in groups">
 	       		<accordion-heading>
-					<span class="step-number">{{$index + 1}}.</span> </span>{{group.title}} <span class="value-preview"> {{group.preview}} </span><i class="pull-right glyphicon glyphicon-ok"></i>
+					<span class="step-number">{{$index + 1}}.</span> </span>{{group.title}} <span class="value-preview"> {{group.preview}} </span>
+					<i ng-if="group.status == 3" class="pull-right glyphicon glyphicon-ok"></i>
 				</accordion-heading>
-				
+				<div ng-include="group.content"></div>
 		    </accordion-group>
         </accordion>
         

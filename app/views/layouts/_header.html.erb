@@ -22,16 +22,22 @@
           </li>
           <% if user_signed_in? %>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">New stuff <span class="nav-stuff-badge badge">3</span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">New stuff <span class="nav-stuff-badge badge"> {{ groupNb }} </span></a>
             <ul class="progress-nav dropdown-menu" aria-labelledby="themes">
                 <li><h5>Your next steps</h5></li>
                 <li class="divider"></li>
-                <li><a href="#">Entrez vos coordonnées</a><span class="label label-info">TO DO</span></li>
+                <li ng-repeat="group in groups">
+                  <a href="#"> {{ group.title }} </a>
+                  <span ng-if="group.status == 1" class="label label-info">TO DO</span>
+                  <span ng-if="group.status == 2" class="label label-warning">IN PROGRESS</span>
+                  <span ng-if="group.status == 3" class="label label-success">DONE</span>
+                </li>
+                <!-- <li><a href="#">Entrez vos coordonnées</a><span class="label label-info">TO DO</span></li>
                 <li><a href="#">Renseigner votre secteur d'activité</a><span class="label label-info">TO DO</span></li>
                 <li><a href="#">Prenez rendez-vous par internet</a><span class="label label-info">TO DO</span></li>
                 <li><a href="#">Gérez vos horaires</a><span class="label label-info">TO DO</span></li>
                 <li><a href="#">Gérez vos agendas</a><span class="label label-info">TO DO</span></li>
-                <li><a href="#">Gérez vos rendez-vous</a><span class="label label-info">TO DO</span></li>
+                <li><a href="#">Gérez vos rendez-vous</a><span class="label label-info">TO DO</span></li> -->
               </ul>
           </li>
           <% end %>
